@@ -23,8 +23,8 @@ const UploadPage = () => {
   };
 
   return (
-    <div>
-      <h1>Upload Page</h1>
+    <div className="flex justify-normal">
+      <h1 className="text-bold text-2xl text-blue-900 ">Upload Page</h1>
       <FileUploadButton onFileUpload={handleFileUpload} />
     </div>
   );

@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 type TableRow = {
-  Plates: string;
-  Dates: number;
+  Plate: string;
+  S_No: number;
 };
 
 type TableProps = {
@@ -17,15 +17,23 @@ const Table = ({ data }: TableProps) => {
           <table className="table-auto border border-gray-200">
             <thead>
               <tr>
-                <th className="px-16 py-4 bg-gray-100">Plates</th>
-                <th className="px-16 py-4 bg-gray-100">Dates</th>
+                <th className="px-16 py-4 bg-gray-100 text-bold text-xl">
+                  S.No
+                </th>
+                <th className="px-16 py-4 bg-gray-100 text-bold text-xl">
+                  Plates
+                </th>
               </tr>
             </thead>
             <tbody>
               {data.map((row, index) => (
                 <tr key={index}>
-                  <td className="px-16 py-2 border-b border-gray-200">{row.Plates}</td>
-                  <td className="px-16 py-2 border-b border-gray-200">{row.Dates}</td>
+                  <td className="px-16 py-2 border-b border-gray-300 bg-gray-200">
+                    {row.S_No}
+                  </td>
+                  <td className="px-16 py-2 border-b border-gray-300">
+                    {row.Plate}
+                  </td>
                 </tr>
               ))}
             </tbody>
