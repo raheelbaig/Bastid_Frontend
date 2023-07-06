@@ -26,11 +26,7 @@ const page = () => {
 
     fetchData();
   }, []);
-  const data = [
-    { Plate: "John Doe", S_No: 28 },
-    { Plate: "Jane Smith", S_No: 32 },
-    // Add more data rows as needed
-  ];
+
   return (
     <div>
       <h1 className="text-bold text-3xl text-center text-blue-500 mt-8">
@@ -38,10 +34,10 @@ const page = () => {
       </h1>
 
       {tableList ? (
-        <div className="mt-5">
+        <div className="mt-5 mb-5">
           {tableList.map((val: any, id: number) => (
             <div>
-              <h1 className="text-bold" key={id}>
+              <h1 className="text-bold ml-8 text-xl text-blue-500" key={id}>
                 {val}
               </h1>
               <div>
@@ -53,7 +49,6 @@ const page = () => {
       ) : (
         <p>Loading state</p>
       )}
-      <div>ace</div>
     </div>
   );
 };
