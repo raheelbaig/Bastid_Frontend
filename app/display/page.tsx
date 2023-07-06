@@ -36,7 +36,7 @@ const page = () => {
       <h1 className="text-bold text-3xl text-center text-blue-500 mt-8">
         Data Inside dataBase{" "}
       </h1>
-      <Table data={data} />
+
       {tableList ? (
         <div className="mt-5">
           {tableList.map((val: any, id: number) => (

@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
 import FileUploadButton from "./FileUploadBtn";
-
+import { useRouter } from "next/navigation";
 const UploadPage = () => {
+  const router = useRouter();
   const handleFileUpload = async (file: any) => {
     try {
       const formData = new FormData();
@@ -26,6 +27,14 @@ const UploadPage = () => {
     <div className="flex justify-normal">
       <h1 className="text-bold text-2xl text-blue-900 ">Upload Page</h1>
       <FileUploadButton onFileUpload={handleFileUpload} />
+      <button
+        className="text-bold text-white bg-blue-500 w-36 h-12 hover:bg-blue-900 text-lg rounded-xl"
+        onClick={() => {
+          router.push("/display");
+        }}
+      >
+        Display Data
+      </button>
     </div>
   );
 };
