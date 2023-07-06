@@ -3,11 +3,12 @@ import SignUp from "@/components/SignUp";
 import Image from "next/image";
 import React, { useState } from "react";
 import axios from "axios";
-
+import { useRouter } from "next/navigation";
 export default function Home() {
   const [username, setUsername] = useState("ace");
   const [password, setPassword] = useState("ace");
-  const [type, setType] = useState("ace");
+  const [type, setType] = useState("");
+  const [createUser, setCreatedUser] = useState("");
 
   const handleFormSubmit = async (e: any) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ export default function Home() {
         password,
         type,
       });
+      setCreatedUser("true");
 
       console.log("Data submitted successfully:", response.data);
       // Handle any further actions or display success message
@@ -106,6 +108,15 @@ export default function Home() {
               >
                 Sign Up
               </button>
+            </div>
+            <div>
+              {createUser ? (
+                <div>
+                  <p className="text-green-500 text-bold ">
+                    User has been created Successfully
+                  </p>
+                </div>
+              ) : null}
             </div>
           </form>
         </div>
